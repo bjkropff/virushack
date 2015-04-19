@@ -8,6 +8,7 @@ TagManager:
   - sentry
   - wall
   - player
+  - wormOrbit
   layers:
   - Default
   - TransparentFX
