@@ -4,18 +4,14 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 
 public class LevelManager : MonoBehaviour {
-
-	public bool level2aLock = false;
-	public bool level2bLock = false;
-	public bool level2cLock = false;
-	//bool level3Lock = false;
-
+	
 	public bool[] levelList; 
-
+	public bool isWormActive = false;
 
 	void Awake()
 	{
 		levelList = new bool[]{false, false, false, false, false};
+		isWormActive = false;
 		DontDestroyOnLoad(this);
 	}
 
@@ -46,6 +42,15 @@ public class LevelManager : MonoBehaviour {
 			if (levelList[1] && levelList[2] && levelList[3])
 				GameObject.Find ("Level 3").GetComponent<Button>().interactable = true;
 		}
+
+		if (Input.GetKeyDown(KeyCode.Alpha1))
+		{
+			if(!isWormActive)
+			{
+				Debug.Log ("WORM UNLOCKED");
+				isWormActive = true;
+			}
+		}
 	}
 
 	void OnLevelWasLoaded(int level)
@@ -53,6 +58,7 @@ public class LevelManager : MonoBehaviour {
 		if (level == 0)
 		{
 			levelList = new bool[]{false, false, false, false, false};
+			isWormActive = false;
 		}
 	}
 }
