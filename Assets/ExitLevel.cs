@@ -21,7 +21,10 @@ public class ExitLevel : MonoBehaviour {
 	{
 		if (coll.gameObject.name == "Player")
 		{
-			manager.GetComponent<LevelManager>().levelList[completeLevel-1] = true;
+			if (completeLevel > 0)
+			{
+				manager.GetComponent<LevelManager>().levelList[completeLevel-1] = true;
+			}
 			Application.LoadLevel(nextLevel); // load level select	
 		}
 	}

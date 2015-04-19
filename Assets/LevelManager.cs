@@ -4,14 +4,8 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 
 public class LevelManager : MonoBehaviour {
-
-	public bool level2aLock = false;
-	public bool level2bLock = false;
-	public bool level2cLock = false;
-	//bool level3Lock = false;
-
+	
 	public bool[] levelList; 
-
 
 	void Awake()
 	{
