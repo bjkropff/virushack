@@ -17,4 +17,10 @@ public class PlayerController : MonoBehaviour {
 
 		GetComponent<Rigidbody2D>().velocity = new Vector2 (moveHorizontal * maxSpeed, moveVertical * maxSpeed);
 	}
+
+	void OnTriggerEnter2D(Collider2D col) {
+		if (col.gameObject.tag == "lazerbeam") {
+			Debug.Log("Hit a lazerbeam");
+		}
+	}
 }

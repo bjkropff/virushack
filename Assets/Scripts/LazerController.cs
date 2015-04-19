@@ -26,7 +26,6 @@ public class LazerController : MonoBehaviour {
 		if (isActive) {
 
 			if(timeSinceSwitch > timeOn) {
-				Debug.Log ("Off!");
 				isActive = false;
 				timeSinceSwitch = 0;
 				thisBeam.SetActive(false);
@@ -34,7 +33,6 @@ public class LazerController : MonoBehaviour {
 		} else {
 
 			if(timeSinceSwitch > timeOff) {
-				Debug.Log ("On!");
 				isActive = true;
 				timeSinceSwitch = 0;
 				thisBeam.SetActive(true);

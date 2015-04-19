@@ -47,7 +47,7 @@ GameObject:
   - 61: {fileID: 6139186}
   m_Layer: 0
   m_Name: Beam
-  m_TagString: Untagged
+  m_TagString: lazerbeam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
