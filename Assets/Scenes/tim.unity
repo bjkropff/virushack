@@ -431,10 +431,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00c96583bb315e94081477c798702326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level2aLock: 1
-  level2bLock: 0
-  level2cLock: 0
   levelList: 
+  isWormActive: 0
+  isTrojanActive: 0
+  isShieldActive: 0
+  isEMPActive: 0
+  cheatsActive: 1
 --- !u!4 &942725185
 Transform:
   m_ObjectHideFlags: 0
@@ -606,6 +608,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 5
+  deathParticle: {fileID: 0}
 --- !u!58 &1392995584
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -669,6 +672,18 @@ Prefab:
     - target: {fileID: 457836, guid: d19d79abb5d587944947b39e3fd3305a, type: 2}
       propertyPath: m_RootOrder
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 21234468, guid: d19d79abb5d587944947b39e3fd3305a, type: 2}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21234468, guid: d19d79abb5d587944947b39e3fd3305a, type: 2}
+      propertyPath: m_Color.g
+      value: .41911763
+      objectReference: {fileID: 0}
+    - target: {fileID: 21234468, guid: d19d79abb5d587944947b39e3fd3305a, type: 2}
+      propertyPath: m_Color.b
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d19d79abb5d587944947b39e3fd3305a, type: 2}
@@ -1047,7 +1062,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: .556862772, g: 0, b: 0, a: 1}
 --- !u!4 &1989027815
 Transform:
   m_ObjectHideFlags: 0
