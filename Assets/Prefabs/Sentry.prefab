@@ -13,7 +13,7 @@ GameObject:
   - 50: {fileID: 5079778}
   - 61: {fileID: 6197474}
   - 114: {fileID: 11401218}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sentry
   m_TagString: sentry
   m_Icon: {fileID: 0}

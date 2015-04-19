@@ -3,6 +3,9 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 
+	public AudioSource damageSound1;
+	public AudioSource deathSound1;
+
 	public float maxSpeed = 10;
 	public GameObject deathParticle;
 
@@ -45,11 +48,15 @@ public class PlayerController : MonoBehaviour {
 
 	void takeDamage(Collider2D playerCol, Collider2D enemyCol) {
 		health--;
+
+
 		Debug.Log (health);
 
 		if (health == 0) {
+			deathSound1.Play();
 			StartCoroutine ("reloadLevel");
 		} else {
+			damageSound1.Play();
 			anim.SetBool ("damaged", true);
 			Physics2D.IgnoreCollision(playerCol, enemyCol, true);
 			StartCoroutine (invincible(playerCol, enemyCol));

@@ -25,40 +25,34 @@ public class SentryPatrol : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D coll)
 	{
-		switch (patrolType)
-		{
+		if (coll.gameObject.tag == "wall") {
+			switch (patrolType) {
 			case "leftright":
 				moveHorizontal = -moveHorizontal;
 				break;
 
 			case "updown":
-				if(coll.gameObject.tag == "wall") {
+				if (coll.gameObject.tag == "wall") {
 					moveVertical = -moveVertical;
 				}
 				break;
 
 			case "clockwise":
-				if (moveHorizontal != 0)
-				{	
+				if (moveHorizontal != 0) {	
 					moveVertical = -moveHorizontal;
 					moveHorizontal = 0;
-				}
-				else
-				{
+				} else {
 					moveHorizontal = moveVertical;
 					moveVertical = 0;
 				}
 
 				break;
-		
+			
 			case "counterclockwise":
-				if (moveHorizontal != 0)
-				{	
+				if (moveHorizontal != 0) {	
 					moveVertical = moveHorizontal;
 					moveHorizontal = 0;
-				}
-				else
-				{
+				} else {
 					moveHorizontal = -moveVertical;
 					moveVertical = 0;
 				}
@@ -68,6 +62,7 @@ public class SentryPatrol : MonoBehaviour {
 			default:
 				break;
 
+			}
 		}
 	}
 
