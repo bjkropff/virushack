@@ -6,11 +6,15 @@ public class PlayerController : MonoBehaviour {
 	public float maxSpeed = 10;
 	public GameObject deathParticle;
 
+	private int health = 2;
 	private bool isAlive = true;
+
+	Animator anim;
 
 	// Use this for initialization
 	void Start () {
-	
+		anim = GetComponent<Animator> ();
+		anim.SetBool ("damaged", false);
 	}
 	
 	// Update is called once per frame
@@ -25,18 +29,39 @@ public class PlayerController : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col) {
 		if (col.gameObject.tag == "lazerbeam") {
-			StartCoroutine("reloadLevel");
+			Collider2D playerCol = GetComponent<Collider2D>();
+			takeDamage (playerCol, col);
 		}
-		if (col.gameObject.tag == "sentry") {
-			Debug.Log ("Hit a sentry");
-		}
-
 	}
 
 	void OnCollisionEnter2D(Collision2D col) {
 		if (col.gameObject.tag == "sentry") {
-			StartCoroutine("reloadLevel");
+			//grab the Collider2D objects to pass to the Physics2D to ignore
+			Collider2D playerCol = GetComponent<Collider2D>();
+			Collider2D enemyCol = col.gameObject.GetComponent<Collider2D>();
+			takeDamage (playerCol, enemyCol);
 		}
+	}
+
+	void takeDamage(Collider2D playerCol, Collider2D enemyCol) {
+		health--;
+		Debug.Log (health);
+
+		if (health == 0) {
+			StartCoroutine ("reloadLevel");
+		} else {
+			anim.SetBool ("damaged", true);
+			Physics2D.IgnoreCollision(playerCol, enemyCol, true);
+			StartCoroutine (invincible(playerCol, enemyCol));
+		}
+	}
+
+	IEnumerator invincible(Collider2D pCol, Collider2D eCol) {
+		yield return new WaitForSeconds(1.0f);
+		Debug.Log("Detect collisions again!");
+		Physics2D.IgnoreCollision (pCol, eCol, false);
+		anim.SetBool ("damaged", false);
+		StopCoroutine("invincible");
 	}
 
 	IEnumerator reloadLevel() {
