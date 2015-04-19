@@ -23,4 +23,10 @@ public class PlayerController : MonoBehaviour {
 			Debug.Log("Hit a lazerbeam");
 		}
 	}
+
+	void OnCollisionEnter2D(Collision2D col) {
+		if (col.gameObject.tag == "sentry") {
+			Debug.Log ("Hit a sentry");
+		}
+	}
 }
