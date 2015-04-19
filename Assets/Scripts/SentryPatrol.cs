@@ -3,15 +3,16 @@ using System.Collections;
 
 public class SentryPatrol : MonoBehaviour {
 
-	public GameObject target;
 	public string patrolType = "stationary";
+	public string fallback = "stationary";
 	public float maxSpeed = 5.0f;
 	public float moveHorizontal = 0.0f;
 	public float moveVertical = 0.0f;
+	public GameObject target;
 
 	// Use this for initialization
 	void Start () {
-
+	
 	}
 	
 	// Update is called once per frame
@@ -31,7 +32,9 @@ public class SentryPatrol : MonoBehaviour {
 				break;
 
 			case "updown":
-				moveVertical = -moveVertical;
+				if(coll.gameObject.tag == "wall") {
+					moveVertical = -moveVertical;
+				}
 				break;
 
 			case "clockwise":

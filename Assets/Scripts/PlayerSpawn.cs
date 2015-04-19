@@ -7,7 +7,7 @@ public class PlayerSpawn : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Instantiate(player, transform.position, Quaternion.identity);
+		player.transform.position = GetComponent<Transform>().position;
 	}
 	
 	// Update is called once per frame

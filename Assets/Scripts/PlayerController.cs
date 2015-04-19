@@ -4,6 +4,9 @@ using System.Collections;
 public class PlayerController : MonoBehaviour {
 
 	public float maxSpeed = 10;
+	public GameObject deathParticle;
+
+	private bool isAlive = true;
 
 	// Use this for initialization
 	void Start () {
@@ -15,18 +18,38 @@ public class PlayerController : MonoBehaviour {
 		float moveHorizontal = Input.GetAxis ("Horizontal");
 		float moveVertical = Input.GetAxis ("Vertical");
 
-		GetComponent<Rigidbody2D>().velocity = new Vector2 (moveHorizontal * maxSpeed, moveVertical * maxSpeed);
+		if (isAlive) {
+			GetComponent<Rigidbody2D> ().velocity = new Vector2 (moveHorizontal * maxSpeed, moveVertical * maxSpeed);
+		}
 	}
 
 	void OnTriggerEnter2D(Collider2D col) {
 		if (col.gameObject.tag == "lazerbeam") {
-			Debug.Log("Hit a lazerbeam");
+			StartCoroutine("reloadLevel");
 		}
+		if (col.gameObject.tag == "sentry") {
+			Debug.Log ("Hit a sentry");
+		}
+
 	}
 
 	void OnCollisionEnter2D(Collision2D col) {
 		if (col.gameObject.tag == "sentry") {
-			Debug.Log ("Hit a sentry");
+			StartCoroutine("reloadLevel");
 		}
+	}
+
+	IEnumerator reloadLevel() {
+
+		isAlive = false;
+
+		deathParticle.transform.position = gameObject.transform.position;
+		deathParticle.GetComponent<ParticleSystem>().Play ();
+
+		gameObject.transform.position = new Vector2(100, 100);
+		GetComponent<Rigidbody2D>().velocity = new Vector2 (0, 0);
+
+		yield return new WaitForSeconds(2.0f);
+		Application.LoadLevel(Application.loadedLevel);
 	}
 }
