@@ -4,4 +4,20 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/title.unity
+  - enabled: 1
+    path: Assets/levelselect.unity
+  - enabled: 1
+    path: Assets/Scenes/testlevel1.unity
+  - enabled: 1
+    path: Assets/Scenes/testlevel1a.unity
+  - enabled: 1
+    path: Assets/Scenes/testlevel2.unity
+  - enabled: 1
+    path: Assets/Scenes/testlevel3.unity
+  - enabled: 1
+    path: Assets/Scenes/tim.unity
+  - enabled: 1
+    path: Assets/Scenes/win.unity
