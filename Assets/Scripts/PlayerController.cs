@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour {
 	public AudioSource damageSound1;
 	public AudioSource deathSound1;
 
+	GameObject levelManager;
+
 	public float maxSpeed = 10;
 	public GameObject deathParticle;
 
@@ -16,6 +18,13 @@ public class PlayerController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		levelManager = GameObject.Find ("LevelManger");
+
+		if (levelManager.GetComponent<LevelManager> ().isShieldActive) {
+			health = 2;
+		} else {
+			health = 1;
+		}
 		anim = GetComponent<Animator> ();
 		anim.SetBool ("damaged", false);
 	}
