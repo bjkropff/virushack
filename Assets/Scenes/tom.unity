@@ -180,18 +180,10 @@ Prefab:
       propertyPath: deathParticle
       value: 
       objectReference: {fileID: 1611077222}
-    - target: {fileID: 21244178, guid: c9bacfe6666aab348b845710d5728e3b, type: 2}
-      propertyPath: m_Color.r
-      value: .838235259
-      objectReference: {fileID: 0}
-    - target: {fileID: 21244178, guid: c9bacfe6666aab348b845710d5728e3b, type: 2}
-      propertyPath: m_Color.g
-      value: .838235259
-      objectReference: {fileID: 0}
-    - target: {fileID: 21244178, guid: c9bacfe6666aab348b845710d5728e3b, type: 2}
-      propertyPath: m_Color.b
-      value: .838235259
-      objectReference: {fileID: 0}
+    - target: {fileID: 8265572, guid: c9bacfe6666aab348b845710d5728e3b, type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 89bfe3ddf71124341b784ab792da3552, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c9bacfe6666aab348b845710d5728e3b, type: 2}
   m_IsPrefabParent: 0
@@ -199,23 +191,6 @@ Prefab:
 GameObject:
   m_PrefabParentObject: {fileID: 176822, guid: c9bacfe6666aab348b845710d5728e3b, type: 2}
   m_PrefabInternal: {fileID: 158912255}
---- !u!95 &158912257
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 158912256}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: cf118f74744351f42a887500b536ef0d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &162261855
 Prefab:
   m_ObjectHideFlags: 0
