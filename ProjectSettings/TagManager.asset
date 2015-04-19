@@ -17,10 +17,10 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - player
+  - enemies
+  - walls
+  - enemy_walls
   - 
   - 
   - 
