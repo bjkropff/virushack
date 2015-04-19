@@ -7,4 +7,9 @@ public class SelectorScript : MonoBehaviour {
 	{
 		Application.LoadLevel(level);
 	}
+
+	public void ExitGame()
+	{
+		Application.Quit ();
+	}
 }

@@ -3,9 +3,13 @@ using System.Collections;
 
 public class ExitLevel : MonoBehaviour {
 
+	GameObject manager;
+	public int nextLevel = 0;
+	public int completeLevel;
+
 	// Use this for initialization
 	void Start () {
-	
+		manager = GameObject.Find("LevelManager");
 	}
 	
 	// Update is called once per frame
@@ -17,7 +21,8 @@ public class ExitLevel : MonoBehaviour {
 	{
 		if (coll.gameObject.name == "Player")
 		{
-			Application.LoadLevel(0); // load level select	
+			manager.GetComponent<LevelManager>().levelList[completeLevel-1] = true;
+			Application.LoadLevel(nextLevel); // load level select	
 		}
 	}
 }
