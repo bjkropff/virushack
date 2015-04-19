@@ -1,46 +1,46 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &144770
+--- !u!1 &152746
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 478978}
-  - 33: {fileID: 3301516}
-  - 23: {fileID: 2334126}
-  - 61: {fileID: 6143806}
+  - 4: {fileID: 457144}
+  - 33: {fileID: 3324804}
+  - 23: {fileID: 2388994}
+  - 61: {fileID: 6164668}
   m_Layer: 0
-  m_Name: Wall_Block
+  m_Name: WallSentry
   m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &478978
+--- !u!4 &457144
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 144770}
+  m_GameObject: {fileID: 152746}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.43531549, y: -1.74040818, z: 5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -2.5710001, y: -3.48000002, z: 6}
+  m_LocalScale: {x: .304100007, y: 2.25283551, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!23 &2334126
+--- !u!23 &2388994
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 144770}
+  m_GameObject: {fileID: 152746}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_Materials:
-  - {fileID: 2100000, guid: 69b0663bd8a9c884dbfe40c5ec310cff, type: 2}
+  - {fileID: 2100000, guid: d8b046d9e31e6be45b58e660bdbd15cf, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -54,19 +54,19 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &3301516
+--- !u!33 &3324804
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 144770}
+  m_GameObject: {fileID: 152746}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!61 &6143806
+--- !u!61 &6164668
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 144770}
+  m_GameObject: {fileID: 152746}
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -83,5 +83,5 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 144770}
+  m_RootGameObject: {fileID: 152746}
   m_IsPrefabParent: 1

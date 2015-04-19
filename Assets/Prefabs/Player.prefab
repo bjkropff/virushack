@@ -71,7 +71,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 5
-  deathParticle: {fileID: 190108, guid: b1131cdd06b25b8489870f86f8da1d91, type: 2}
+  deathParticle: {fileID: 0}
 --- !u!212 &21244178
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -27,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 188010}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.87, y: -2.96000004, z: 0}
+  m_LocalPosition: {x: 1.87, y: -2.96000004, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -86,7 +86,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 188010}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
@@ -102,11 +102,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a04a20aaa313cc8439faf39583849623, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 176822, guid: c9bacfe6666aab348b845710d5728e3b, type: 2}
   patrolType: updown
+  fallback: stationary
   maxSpeed: 3
   moveHorizontal: 0
   moveVertical: 1
+  target: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
