@@ -134,9 +134,35 @@ Prefab:
       propertyPath: deathParticle
       value: 
       objectReference: {fileID: 1023164939}
-    m_RemovedComponents: []
+    - target: {fileID: 11468858, guid: c9bacfe6666aab348b845710d5728e3b, type: 2}
+      propertyPath: damageSound1
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11468858, guid: c9bacfe6666aab348b845710d5728e3b, type: 2}
+      propertyPath: deathSound1
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: c9bacfe6666aab348b845710d5728e3b, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &685054838 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 172488, guid: 2e2851b8d85efb04f80bfe1a8aebdd32, type: 2}
+  m_PrefabInternal: {fileID: 837752395}
+--- !u!114 &685054839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 685054838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c13e660fd1f0d8e4cb270642699aebc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextLevel: 3
+  completeLevel: 0
 --- !u!1001 &737563521
 Prefab:
   m_ObjectHideFlags: 0
@@ -280,6 +306,10 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 461892357}
+    - target: {fileID: 11420770, guid: 39eaf1927391c4a4b8a130947ec5ed55, type: 2}
+      propertyPath: playerSpawnSound
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 39eaf1927391c4a4b8a130947ec5ed55, type: 2}
   m_IsPrefabParent: 0

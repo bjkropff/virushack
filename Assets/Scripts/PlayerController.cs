@@ -3,8 +3,11 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 
-	public AudioSource damageSound1;
-	public AudioSource deathSound1;
+	//variables for global gameobjects
+	GameObject audioManager;
+	GameObject levelManager;
+	LevelManager levelScript;
+	AudioController audioScript;
 
 	public float maxSpeed = 10;
 	public GameObject deathParticle;
@@ -16,6 +19,19 @@ public class PlayerController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		levelManager = GameObject.Find ("LevelManager");
+		levelScript = levelManager.GetComponent<LevelManager> ();
+		audioManager = GameObject.Find ("AudioManager");
+		audioScript = audioManager.GetComponent<AudioController> ();
+
+		Debug.Log (levelScript.isShieldActive);
+
+		if (levelManager.GetComponent<LevelManager> ().isShieldActive) {
+			health = 2;
+
+		} else {
+			health = 1;
+		}
 		anim = GetComponent<Animator> ();
 		anim.SetBool ("damaged", false);
 	}
@@ -53,10 +69,10 @@ public class PlayerController : MonoBehaviour {
 		Debug.Log (health);
 
 		if (health == 0) {
-			deathSound1.Play();
+			audioScript.playerDeath.Play();
 			StartCoroutine ("reloadLevel");
 		} else {
-			damageSound1.Play();
+			audioScript.playerDamage.Play();
 			anim.SetBool ("damaged", true);
 			Physics2D.IgnoreCollision(playerCol, enemyCol, true);
 			StartCoroutine (invincible(playerCol, enemyCol));
