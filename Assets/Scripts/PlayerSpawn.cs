@@ -3,14 +3,15 @@ using System.Collections;
 
 public class PlayerSpawn : MonoBehaviour {
 
-	public GameObject player;
-
-	public AudioSource playerSpawnSound;
+	GameObject player;
+	public AudioSource playerSpawn;
 
 	// Use this for initialization
 	void Start () {
-		playerSpawnSound.Play ();
+		player = GameObject.Find ("Player");
 		player.transform.position = GetComponent<Transform>().position;
+		playerSpawn = GameObject.Find ("AudioManager/PlayerSpawnSound").GetComponent<AudioSource>();
+		playerSpawn.Play ();
 	}
 	
 	// Update is called once per frame
