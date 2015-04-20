@@ -19,3 +19,9 @@ EditorBuildSettings:
     path: Assets/leveltest2.unity
   - enabled: 1
     path: Assets/testlevel1-3.unity
+  - enabled: 1
+    path: Assets/testlevel5-3.unity
+  - enabled: 1
+    path: Assets/testlevel5-2.unity
+  - enabled: 1
+    path: Assets/Scenes/win.unity

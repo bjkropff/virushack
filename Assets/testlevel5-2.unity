@@ -157,6 +157,7 @@ GameObject:
   - 92: {fileID: 125307732}
   - 124: {fileID: 125307731}
   - 81: {fileID: 125307730}
+  - 114: {fileID: 125307735}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -229,6 +230,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 20
+--- !u!114 &125307735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 125307729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b49c1b8956e5a644b9237e09e5a3cdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseAspect: 1.77777779
 --- !u!1001 &164873048
 Prefab:
   m_ObjectHideFlags: 0
@@ -317,6 +330,23 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2e2851b8d85efb04f80bfe1a8aebdd32, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &211326751 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 172488, guid: 2e2851b8d85efb04f80bfe1a8aebdd32, type: 2}
+  m_PrefabInternal: {fileID: 211326750}
+--- !u!114 &211326752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 211326751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c13e660fd1f0d8e4cb270642699aebc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextLevel: 9
+  completeLevel: 1
 --- !u!1001 &264017803
 Prefab:
   m_ObjectHideFlags: 0
@@ -1709,18 +1739,6 @@ Prefab:
 GameObject:
   m_PrefabParentObject: {fileID: 176822, guid: c9bacfe6666aab348b845710d5728e3b, type: 2}
   m_PrefabInternal: {fileID: 1637234512}
---- !u!114 &2051983174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2051983168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64ed567656be4eb4c98eee3a5233ffae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &2134174853
 Prefab:
   m_ObjectHideFlags: 0
