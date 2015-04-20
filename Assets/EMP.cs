@@ -5,6 +5,7 @@ public class EMP : MonoBehaviour {
 	
 	GameObject levelManager;
 	public bool pulseAvailable = false;
+	public float stopTime = 10.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -18,6 +19,7 @@ public class EMP : MonoBehaviour {
 			if (pulseAvailable)
 			{
 				Debug.Log ("ZZZZAAAPPPPP!");
+				sendPulse();
 				pulseAvailable = false;
 			}
 			else {
@@ -37,6 +39,16 @@ public class EMP : MonoBehaviour {
 								
 				//activateWorms();
 			}
+		}
+	}
+
+	void sendPulse()
+	{
+		GameObject[] sentryList = GameObject.FindGameObjectsWithTag("sentry");
+		foreach (GameObject go in sentryList)
+		{
+			go.gameObject.GetComponent<SentryPatrol>().stopTime = this.stopTime;
+			go.gameObject.SendMessage("pauseMovement");
 		}
 	}
 }

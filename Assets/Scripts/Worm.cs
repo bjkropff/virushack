@@ -98,7 +98,8 @@ public class Worm : MonoBehaviour {
 		GameObject.Destroy(transform.GetChild(toDelete).gameObject);
 			
 		// plant a worm
-		GameObject.Instantiate(wormDecoy, this.transform.position, Quaternion.identity);  // as GameObject;
+		GameObject newWorm = GameObject.Instantiate(wormDecoy, this.transform.position, Quaternion.identity) as GameObject;
+		newWorm.AddComponent<WormDecoy>();
 		
 	}
 }
