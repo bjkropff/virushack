@@ -60,6 +60,12 @@ public class LevelManager : MonoBehaviour {
 				GameObject.Find ("Level 3").GetComponent<Button>().interactable = true;
 		}
 
+		// Return to Level Select (quit)
+		if (Input.GetKeyDown(KeyCode.R))
+		{
+			Application.LoadLevel(1);
+		}
+
 		if (cheatsActive)
 		{
 			if (Input.GetKeyDown(KeyCode.Alpha1))
