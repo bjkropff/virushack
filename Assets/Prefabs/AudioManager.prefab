@@ -431,10 +431,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfa98419cfb372c4c924034c1e56c49c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerDeath: {fileID: 0}
-  playerSpawn: {fileID: 0}
-  playerDamage: {fileID: 0}
-  mainMusic: {fileID: 0}
+  playerDeath: {fileID: 8245274}
+  playerSpawn: {fileID: 8266422}
+  playerDamage: {fileID: 8284434}
+  mainMusic: {fileID: 8265440}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

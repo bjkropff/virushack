@@ -24,11 +24,9 @@ public class PlayerController : MonoBehaviour {
 		audioManager = GameObject.Find ("AudioManager");
 		audioScript = audioManager.GetComponent<AudioController> ();
 
-		Debug.Log (levelScript.isShieldActive);
 
 		if (levelManager.GetComponent<LevelManager> ().isShieldActive) {
 			health = 2;
-
 		} else {
 			health = 1;
 		}
@@ -69,10 +67,10 @@ public class PlayerController : MonoBehaviour {
 		Debug.Log (health);
 
 		if (health == 0) {
-			audioScript.playerDeath.Play();
+			audioScript.playerDeathPlay();
 			StartCoroutine ("reloadLevel");
 		} else {
-			audioScript.playerDamage.Play();
+			audioScript.playerDamagePlay();
 			anim.SetBool ("damaged", true);
 			Physics2D.IgnoreCollision(playerCol, enemyCol, true);
 			StartCoroutine (invincible(playerCol, enemyCol));
