@@ -4,7 +4,7 @@
 
 ###### Created at the 32nd Ludum Dare Game Jam at Urban Airship, Portland, OR.
 
-**Note:** This is a game, not a virus or a hack. VirusHack is the working title. We now realize that is may possibly be misleading.
+**Note:** This is a game, not a virus or a hack. VirusHack is the working title. We now realize that this may possibly be misleading.
 
 #### Snapshot
 
