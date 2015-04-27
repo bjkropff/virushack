@@ -10,8 +10,8 @@ GameObject:
   - 4: {fileID: 427534}
   - 212: {fileID: 21242024}
   - 50: {fileID: 5079778}
-  - 114: {fileID: 11401218}
   - 58: {fileID: 5841196}
+  - 114: {fileID: 11401218}
   m_Layer: 9
   m_Name: Sentry
   m_TagString: sentry
@@ -26,8 +26,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 188010}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.87, y: -2.96000004, z: 1}
-  m_LocalScale: {x: .25, y: .25, z: 1}
+  m_LocalPosition: {x: 3.07999992, y: 3.58999991, z: 1}
+  m_LocalScale: {x: .418194652, y: .418194652, z: .418194652}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -75,8 +75,8 @@ MonoBehaviour:
   maxSpeed: 3
   moveHorizontal: 0
   moveVertical: 1
-  target: {fileID: 0}
   stopTime: 10
+  target: {fileID: 0}
 --- !u!212 &21242024
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -2,36 +2,37 @@
 using System.Collections;
 
 public class PlayerController : MonoBehaviour {
-
-	//variables for global gameobjects
-	GameObject audioManager;
-	GameObject levelManager;
-	LevelManager levelScript;
-	AudioController audioScript;
-
+	
 	public float maxSpeed = 10;
-	public GameObject deathParticle;
+	public AudioClip damagedSound;
+	public AudioClip deathSound;
+	public AudioClip spawnSound;
+	public ParticleSystem deathParticle;
 
 	private int health = 2;
 	private bool isAlive = true;
 
 	Animator anim;
 
+
+	//variables for global gameobject
+	LevelManager levelScript;
+
+	
 	// Use this for initialization
 	void Start () {
-		levelManager = GameObject.Find ("LevelManager");
-		levelScript = levelManager.GetComponent<LevelManager> ();
-		audioManager = GameObject.Find ("AudioManager");
-		audioScript = audioManager.GetComponent<AudioController> ();
+		GameObject lm = GameObject.Find ("LevelManger");
+		levelScript = (lm != null) ? lm.GetComponent<LevelManager> () : null;
 
-
-		if (levelManager.GetComponent<LevelManager> ().isShieldActive) {
+		if (levelScript != null && levelScript.isShieldActive) {
 			health = 2;
 		} else {
 			health = 1;
 		}
 		anim = GetComponent<Animator> ();
 		anim.SetBool ("damaged", false);
+
+		PlaySound (spawnSound);
 	}
 	
 	// Update is called once per frame
@@ -60,17 +61,20 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 
+	//called when the player detects a collision with an unfriendly object
+	//needs to be provided with the Collider2d of both the player and the enemy
+	//to turn the player invulnerable for a short time.
 	void takeDamage(Collider2D playerCol, Collider2D enemyCol) {
-		health--;
 
+		health--;
 
 		Debug.Log (health);
 
 		if (health == 0) {
-			audioScript.playerDeathPlay();
+			PlaySound (deathSound);
 			StartCoroutine ("reloadLevel");
 		} else {
-			audioScript.playerDamagePlay();
+			PlaySound (damagedSound);
 			anim.SetBool ("damaged", true);
 			Physics2D.IgnoreCollision(playerCol, enemyCol, true);
 			StartCoroutine (invincible(playerCol, enemyCol));
@@ -89,13 +93,22 @@ public class PlayerController : MonoBehaviour {
 
 		isAlive = false;
 
-		deathParticle.transform.position = gameObject.transform.position;
-		deathParticle.GetComponent<ParticleSystem>().Play ();
+		Instantiate(deathParticle, gameObject.transform.position, Quaternion.identity);
 
-		gameObject.transform.position = new Vector2(100, 100);
-		GetComponent<Rigidbody2D>().velocity = new Vector2 (0, 0);
+		gameObject.GetComponent<SpriteRenderer> ().enabled = false;
 
 		yield return new WaitForSeconds(2.0f);
 		Application.LoadLevel(Application.loadedLevel);
+	}
+
+	//takes an audio sounds, creates a new object and plays the sound
+	void PlaySound(AudioClip sound) {
+		GameObject soundObject = new GameObject ("Temporary Game Object (Sound)");
+		AudioSource soundSource = soundObject.AddComponent<AudioSource> ();
+		soundSource.clip = sound;
+		soundSource.volume = 1.0f;
+		soundSource.pitch = 1.0f;
+		soundSource.Play ();
+		Destroy (soundObject, sound.length + 0.1f);
 	}
 }

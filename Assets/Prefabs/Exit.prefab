@@ -11,6 +11,7 @@ GameObject:
   - 33: {fileID: 3348708}
   - 23: {fileID: 2377848}
   - 61: {fileID: 6157024}
+  - 114: {fileID: 11446994}
   m_Layer: 0
   m_Name: Exit
   m_TagString: Untagged
@@ -25,7 +26,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 172488}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .0399999991, y: 5.11000013, z: 6}
+  m_LocalPosition: {x: 4.42999983, y: 6.63000011, z: 6}
   m_LocalScale: {x: 1.96894217, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -74,6 +75,19 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
+--- !u!114 &11446994
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 172488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c13e660fd1f0d8e4cb270642699aebc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextLevel: 0
+  completeLevel: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

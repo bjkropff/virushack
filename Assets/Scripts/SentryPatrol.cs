@@ -8,14 +8,15 @@ public class SentryPatrol : MonoBehaviour {
 	public float maxSpeed = 5.0f;
 	public float moveHorizontal = 0.0f;
 	public float moveVertical = 0.0f;
-	public GameObject target;
 	public float stopTime = 10.0f;
 	string oldPatrolType;
 	float Timer;
+	public GameObject target;
 
 	void Awake()
 	{
 		Timer = Time.time + stopTime;
+		target = GameObject.Find ("Player");
 	}
 
 	// Use this for initialization
