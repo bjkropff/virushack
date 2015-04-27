@@ -5,6 +5,10 @@ public class SelectorScript : MonoBehaviour {
 
 	public void LoadScene(int level)
 	{
+		GameObject lm = GameObject.Find ("LevelManager");
+		if (lm != null && Application.loadedLevelName == "win") {
+			DestroyImmediate (lm);
+		}
 		Application.LoadLevel(level);
 	}
 
