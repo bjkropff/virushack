@@ -96,6 +96,7 @@ public class PlayerController : MonoBehaviour {
 		Instantiate(deathParticle, gameObject.transform.position, Quaternion.identity);
 
 		gameObject.GetComponent<SpriteRenderer> ().enabled = false;
+		gameObject.GetComponent<Collider2D> ().enabled = false;
 
 		yield return new WaitForSeconds(2.0f);
 		Application.LoadLevel(Application.loadedLevel);
