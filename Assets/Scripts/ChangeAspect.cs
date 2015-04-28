@@ -2,12 +2,14 @@
 using System.Collections;
 
 public class ChangeAspect : MonoBehaviour {
-	
+
+	//resolution we are converting from
 	public float baseAspect = 16f / 9f;
 
 	// Use this for initialization
 	void Start () {
-		Camera cam = GetComponent<Camera> ();
+		GameObject camera = GameObject.FindGameObjectWithTag ("MainCamera");
+		Camera cam = camera.GetComponent<Camera> ();
 		float aspect = baseAspect / cam.aspect;
 		cam.orthographicSize *= aspect;
 		Resolution res = Screen.currentResolution;
